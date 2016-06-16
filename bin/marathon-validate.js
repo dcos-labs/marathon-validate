@@ -6,7 +6,6 @@ var pkg = require("../package.json");
 var program = require("commander");
 var path = require("path");
 var Schema = require("../lib/schema");
-//var Tags = require("../lib/tags");
 var request = require("request");
 var filePath = "";
 
