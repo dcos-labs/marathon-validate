@@ -1,0 +1,12 @@
+{
+  "container": {
+    "docker": {
+      "image": "tobilg/mini-webserver",
+      "network": "BRIDGE",
+      "portMappings": [
+        { "containerPort": 80 }
+      ]
+    },
+    "type": "DOCKER"
+  }
+}

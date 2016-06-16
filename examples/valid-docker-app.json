@@ -1,0 +1,16 @@
+{
+  "id": "predictionio-server",
+  "container": {
+    "docker": {
+      "image": "tobilg/mini-webserver",
+      "network": "BRIDGE",
+      "portMappings": [
+        { "containerPort": 80 }
+      ]
+    },
+    "type": "DOCKER"
+  },
+  "cpus": 0.2,
+  "mem": 128,
+  "instances": 1
+}
