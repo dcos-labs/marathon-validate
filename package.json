@@ -1,6 +1,6 @@
 {
   "name": "marathon-validate",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A tiny command line tool to validate application or group configuration files for Marathon",
   "main": "bin/marathon-validate.js",
   "scripts": {
@@ -26,10 +26,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tobilg/marathon-validate.git"
+    "url": "https://github.com/dcos-labs/marathon-validate.git"
   },
   "bugs": {
-    "url": "https://github.com/tobilg/marathon-validate/issues"
+    "url": "https://github.com/dcos-labs/marathon-validate/issues"
   },
   "license": "MIT",
   "dependencies": {
