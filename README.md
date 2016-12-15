@@ -39,7 +39,7 @@ $ marathon-validate --help
     -a, --app                 Check an App JSON
     -g, --group               Check a Group JSON
     -m, --marathon <version>  Use schema of specific Marathon version
-    -t                        List all available tags (versions), for usage with the -m flag
+    -t, --tags                List all available tags (versions), for usage with the -m flag
 ```
 
 If you want validate your `application.json` file in the current folder against the `master` version of the JSON schema, you can do a 
