@@ -22,7 +22,7 @@ to install it globally. You can verify the correct installation by issuing
 
 ```bash
 $ marathon-validate --version
-0.1.0
+0.2.0
 ```
 
 ## Usage
@@ -39,6 +39,7 @@ $ marathon-validate --help
     -a, --app                 Check an App JSON
     -g, --group               Check a Group JSON
     -m, --marathon <version>  Use schema of specific Marathon version
+    -t                        List all available tags (versions), for usage with the -m flag
 ```
 
 If you want validate your `application.json` file in the current folder against the `master` version of the JSON schema, you can do a 
@@ -50,7 +51,20 @@ $ marathon-validate -a application.json
 To validate your `application.json` against a specific release version (e.g. `v1.1.1`), you can use
 
 ```bash
-$ marathon-validate -a -m v1.1.1 application.json
+$ marathon-validate -a -m v1.3.6 application.json
 ```
 
-This should work with all `tags` from the [Marathon project](https://api.github.com/repos/mesosphere/marathon/tags).
+This should work with all `tags` from the [Marathon project](https://api.github.com/repos/mesosphere/marathon/tags). You can also get the list of tags like this (output is shortened):
+
+```bash
+$ marathon-validate -t
+List of tags:
+ * v1.4.0-snap30
+ * v1.4.0-snap29
+ * v1.4.0-snap28
+ * v1.4.0-snap27
+ * v1.4.0-snap26
+ * v1.4.0-snap25
+ * v1.4.0-snap24
+...
+```
