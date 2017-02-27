@@ -15,11 +15,37 @@ program
     .usage("[options] <file>")
     .option("-a, --app", "Check an App JSON")
     .option("-g, --group", "Check a Group JSON")
+    .option("-d, --describe <property>", "Describe a property. Has to be use with either -a (app schema) or -g (group schema)")
     .option("-m, --marathon <version>", "Use schema of specific Marathon version")
     .option("-t, --tags", "Get a list of tags for the Marathon project")
     .parse(process.argv);
 
-if (program.tags) {
+if (program.describe && (program.app || program.group)) {
+    var type = "";
+
+    // Set type
+    if (program.app) {
+        type = "app";
+    } else if (program.group) {
+        type = "group";
+    }
+
+    var version = program.marathon || "master";
+
+    // Describe process
+    var describeSchema = new Schema(type, version, null);
+
+    describeSchema.getDescription(program.describe, function (error, result) {
+        if (error) {
+            console.log(error.message);
+            process.exit(1);
+        } else if (result) {
+            console.log(" --> Found " + result.length + " matches for '" + program.describe + "':");
+            console.log(result.join("\n"));
+            process.exit(0);
+        }
+    });
+} else if (program.tags) {
     // https://api.github.com/repos/mesosphere/marathon/tags?per_page=100
     var tags = new Tags();
     tags.getList(function(error, tags) {
@@ -70,6 +96,7 @@ if (program.tags) {
                 process.exit(0);
             }
         });
+
     } else {
         console.log("Please either use the --app or --group flags!");
         process.exit(1);
