@@ -38,7 +38,7 @@ $ marathon-validate --help
     -V, --version              output the version number
     -a, --app                  Check an App JSON
     -g, --group                Check a Group JSON
-    -d, --describe <property>  Describe a property. Has to be use with either -a (app schema) or -g (group schema)
+    -d, --describe <property>  Describe a property. Has to be used with either -a (app schema) or -g (group schema)
     -m, --marathon <version>   Use schema of specific Marathon version
     -t, --tags                 Get a list of tags for the Marathon project
 ```
@@ -49,7 +49,7 @@ If you want validate your `application.json` file in the current folder against 
 $ marathon-validate -a application.json
 ```
 
-To validate your `application.json` against a specific release version (e.g. `v1.1.1`), you can use
+To validate your `application.json` against a specific release version (e.g. `v1.3.6`), you can use
 
 ```bash
 $ marathon-validate -a -m v1.3.6 application.json
