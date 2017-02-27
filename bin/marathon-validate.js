@@ -15,7 +15,7 @@ program
     .usage("[options] <file>")
     .option("-a, --app", "Check an App JSON")
     .option("-g, --group", "Check a Group JSON")
-    .option("-d, --describe <property>", "Describe a property. Has to be use with either -a (app schema) or -g (group schema)")
+    .option("-d, --describe <property>", "Describe a property. Has to be used with either -a (app schema) or -g (group schema)")
     .option("-m, --marathon <version>", "Use schema of specific Marathon version")
     .option("-t, --tags", "Get a list of tags for the Marathon project")
     .parse(process.argv);
