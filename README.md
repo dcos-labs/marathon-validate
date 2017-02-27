@@ -22,7 +22,7 @@ to install it globally. You can verify the correct installation by issuing
 
 ```bash
 $ marathon-validate --version
-0.2.0
+0.3.1
 ```
 
 ## Usage
@@ -34,12 +34,13 @@ $ marathon-validate --help
 
   Options:
 
-    -h, --help                output usage information
-    -V, --version             output the version number
-    -a, --app                 Check an App JSON
-    -g, --group               Check a Group JSON
-    -m, --marathon <version>  Use schema of specific Marathon version
-    -t, --tags                List all available tags (versions), for usage with the -m flag
+    -h, --help                 output usage information
+    -V, --version              output the version number
+    -a, --app                  Check an App JSON
+    -g, --group                Check a Group JSON
+    -d, --describe <property>  Describe a property. Has to be use with either -a (app schema) or -g (group schema)
+    -m, --marathon <version>   Use schema of specific Marathon version
+    -t, --tags                 Get a list of tags for the Marathon project
 ```
 
 If you want validate your `application.json` file in the current folder against the `master` version of the JSON schema, you can do a 

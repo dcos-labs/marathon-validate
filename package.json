@@ -1,6 +1,6 @@
 {
   "name": "marathon-validate",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A tiny command line tool to validate application or group configuration files for Marathon",
   "main": "bin/marathon-validate.js",
   "scripts": {
