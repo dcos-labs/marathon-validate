@@ -4,7 +4,7 @@ A tiny command line tool to validate application or group configuration files fo
  
 ## Purpose
 
-If you're running a Mesos or DC/OS cluster and build custom applications for if, most of the time you'll have to create either a Marathon app definition JSON file, or a group definition JSON file.
+If you're running a Mesos or DC/OS cluster and build custom applications for it, most of the time you'll have to create either a Marathon app definition JSON file, or a group definition JSON file.
 
 As the structure of these files can get a little complicated, `marathon-validate` was created to be able to do a quick sanity check of these files from the command line.
 
@@ -43,7 +43,7 @@ $ marathon-validate --help
     -t, --tags                 Get a list of tags for the Marathon project
 ```
 
-If you want validate your `application.json` file in the current folder against the `master` version of the JSON schema, you can do a 
+If you want to validate your `application.json` file in the current folder against the `master` version of the JSON schema, you can do a 
 
 ```bash
 $ marathon-validate -a application.json
