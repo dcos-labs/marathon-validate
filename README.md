@@ -22,7 +22,7 @@ to install it globally. You can verify the correct installation by issuing
 
 ```bash
 $ marathon-validate --version
-0.3.1
+0.3.3
 ```
 
 ## Usage
@@ -43,6 +43,8 @@ $ marathon-validate --help
     -t, --tags                 Get a list of tags for the Marathon project
 ```
 
+### Validate apps and groups
+
 If you want validate your `application.json` file in the current folder against the `master` version of the JSON schema, you can do a 
 
 ```bash
@@ -55,17 +57,38 @@ To validate your `application.json` against a specific release version (e.g. `v1
 $ marathon-validate -a -m v1.3.6 application.json
 ```
 
-This should work with all `tags` from the [Marathon project](https://api.github.com/repos/mesosphere/marathon/tags). You can also get the list of tags like this (output is shortened):
+This should work with all `tags` from the [Marathon project](https://api.github.com/repos/mesosphere/marathon/tags). 
+
+### Query tags
+
+You can also get the list of tags like this (output is shortened):
 
 ```bash
 $ marathon-validate -t
-List of tags:
- * v1.4.0-snap30
- * v1.4.0-snap29
- * v1.4.0-snap28
- * v1.4.0-snap27
- * v1.4.0-snap26
- * v1.4.0-snap25
- * v1.4.0-snap24
+--> List of tags:
+     * v1.5.0-SNAPSHOT
+     * v1.4.3
+     * v1.4.2
+     * v1.4.2-snapshot5
+     * v1.4.2-snapshot4
+     * v1.4.2-snapshot3
+     * v1.4.2-snapshot2
+     * v1.4.2-SNAPSHOT1
+     * v1.4.1
+     * v1.4.0
 ...
 ```
+
+### Search for field description
+
+You can search the JSON schema for a field's description like this (in this example, the `type` field):
+ 
+```bash
+$ marathon-validate -a -d type
+ --> Loading remote schema: https://raw.githubusercontent.com/mesosphere/marathon/master/docs/docs/rest-api/public/api/v2/schema/AppDefinition.json
+ --> Found 2 matches for 'type':
+     * '.container.type': Container engine type. Supported engine types at the moment are DOCKER and MESOS.
+     * '.container.volumes.persistent.type': The type of mesos disk resource to use; defaults to root
+```
+
+By using the `-a` or `-g` flags, you can specify if you want to query the app or group JSON schema.
