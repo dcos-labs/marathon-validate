@@ -1,3 +1,5 @@
+**Warning: This tool is not up-to-date with the current marathon version**
+
 # marathon-validate
 
 A tiny command line tool to validate application or group configuration files for Marathon and DC/OS.
